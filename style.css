@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    border-radius:10px;
+    border-radius:20px;
+    font-family: 'Fredoka One', cursive;
   }
 
 body {
@@ -10,12 +11,17 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-image: url(https://mblogthumb-phinf.pstatic.net/MjAxODAzMTBfMjM4/MDAxNTIwNjA4MjY1MjEw.xu9Xwp1skqqufw1vS0D5rkPnI3UO18fHy4qZSn_03EMg.0CZ0qQiyKzxQh-BfPDeZNqJwO9_z7y8oGifiC51j7Ekg.GIF.ertyupoq/tumblr_nrr3fwiV421qlhvfoo1_r1_500.gif?type=w2);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
 .calculator {
     width: 350px;
     height: 500px;
-    background-color: rgba(115, 170, 110);
+    background-color: #FFD8DC;
+    border: 5px solid #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,46 +61,46 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(115, 170, 110, 0.2); 
+    background-color: rgba(158, 128, 255, 0.2); 
 }
 
 .confirm{
     margin: 0px 4px;
     width: 128px;
     height: 40px;
-    background-color: rgb(250, 230, 0, 0.8);
+    background-color: #FFDC98;
     font-size: large;
     font-weight: 500;
-    border-color: rgb(250, 230, 0, 0.8);
+    border-color: #FFDC98;
 }
 
 .num{
     margin: 0px 4px;
     width: 60px;
     height: 40px;
-    background-color:gainsboro;
+    background-color:#C8F8EE;
     font-size: large;
     font-weight: 500;
-    border-color: gainsboro;
+    border-color: #C8F8EE;
 }
 
 .zero{
     margin: 0px 4px;
     width: 128px;
     height: 40px;
-    background-color:gainsboro;
+    background-color:#C8F8EE;
     font-size: large;
     font-weight: 500;
-    border-color: gainsboro;
+    border-color: #C8F8EE;
 }
 
 .operator{
     margin: 0px 4px;
     width: 60px;
     height: 40px;
-    background-color:rgba(115, 170, 110);
+    background-color:rgba(158, 128, 255);
     color: white;
     font-size: large;
     font-weight: 500;
-    border-color: rgba(115, 170, 110);
+    border-color: rgba(158, 128, 255);
 }
