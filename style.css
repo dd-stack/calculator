@@ -74,6 +74,10 @@ span{
     border-color: #FFDC98;
 }
 
+.confirm:active{
+    background-color: rgb(255, 197, 80);
+}
+
 .num{
     margin: 0px 4px;
     width: 60px;
@@ -82,6 +86,10 @@ span{
     font-size: large;
     font-weight: 500;
     border-color: #C8F8EE;
+}
+
+.num:active{
+    background-color: #86ffe7;
 }
 
 .zero{
@@ -94,6 +102,10 @@ span{
     border-color: #C8F8EE;
 }
 
+.zero:active{
+    background-color: #86ffe7;
+}
+
 .operator{
     margin: 0px 4px;
     width: 60px;
@@ -103,4 +115,8 @@ span{
     font-size: large;
     font-weight: 500;
     border-color: rgba(158, 128, 255);
+}
+
+.operator:active{
+    background-color: rgb(114, 72, 255);
 }
