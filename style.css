@@ -68,7 +68,7 @@ button {
     background-color: rgba(158, 128, 255, 0.2); 
 }
 
-.confirm {
+.confirm, .clear {
     margin: 0px 4px;
     width: 128px;
     height: 40px;
@@ -78,27 +78,7 @@ button {
     border-color: #FFDC98;
 }
 
-.clear {
-    margin: 0px 4px;
-    width: 128px;
-    height: 40px;
-    background-color: #FFDC98;
-    font-size: large;
-    font-weight: 500;
-    border-color: #FFDC98;
-}
-
-.num {
-    margin: 0px 4px;
-    width: 60px;
-    height: 40px;
-    background-color:#C8F8EE;
-    font-size: large;
-    font-weight: 500;
-    border-color: #C8F8EE;
-}
-
-.decimal {
+.num, .decimal {
     margin: 0px 4px;
     width: 60px;
     height: 40px;
