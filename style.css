@@ -2,7 +2,7 @@
     box-sizing: border-box;
     border-radius:20px;
     font-family: 'Fredoka One', cursive;
-  }
+}
 
 body {
     display: flex;
@@ -15,7 +15,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-  }
+}
+
+button {
+    cursor:pointer;
+}
 
 .calculator {
     width: 350px;
@@ -26,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+}
 
 .box1{
     padding: 20px;
@@ -38,12 +42,12 @@ body {
     flex-direction: row-reverse;
 }
 
-span{
+.display {
     font-size: x-large;
     font-weight: 800;
 }
 
-.box2{
+.box2 {
     margin-top: 20px;
     width: 310px;
     height: 320px;
@@ -54,7 +58,7 @@ span{
     flex-direction: column;
 }
 
-.miniBox{
+.miniBox {
     margin: 5px 0px;
     width: 280px;
     height: 50px;
@@ -64,7 +68,7 @@ span{
     background-color: rgba(158, 128, 255, 0.2); 
 }
 
-.confirm{
+.confirm {
     margin: 0px 4px;
     width: 128px;
     height: 40px;
@@ -74,11 +78,17 @@ span{
     border-color: #FFDC98;
 }
 
-.confirm:active{
-    background-color: rgb(255, 197, 80);
+.clear {
+    margin: 0px 4px;
+    width: 128px;
+    height: 40px;
+    background-color: #FFDC98;
+    font-size: large;
+    font-weight: 500;
+    border-color: #FFDC98;
 }
 
-.num{
+.num {
     margin: 0px 4px;
     width: 60px;
     height: 40px;
@@ -88,11 +98,17 @@ span{
     border-color: #C8F8EE;
 }
 
-.num:active{
-    background-color: #86ffe7;
+.decimal {
+    margin: 0px 4px;
+    width: 60px;
+    height: 40px;
+    background-color:#C8F8EE;
+    font-size: large;
+    font-weight: 500;
+    border-color: #C8F8EE;
 }
 
-.zero{
+.zero {
     margin: 0px 4px;
     width: 128px;
     height: 40px;
@@ -102,11 +118,7 @@ span{
     border-color: #C8F8EE;
 }
 
-.zero:active{
-    background-color: #86ffe7;
-}
-
-.operator{
+.operator {
     margin: 0px 4px;
     width: 60px;
     height: 40px;
@@ -115,8 +127,4 @@ span{
     font-size: large;
     font-weight: 500;
     border-color: rgba(158, 128, 255);
-}
-
-.operator:active{
-    background-color: rgb(114, 72, 255);
 }
