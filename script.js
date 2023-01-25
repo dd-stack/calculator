@@ -33,20 +33,7 @@ buttons.addEventListener('click', function(event){
             }
         }
 
-        if (action === 'num'){
-            if (display.textContent === '0' || previousKey === 'operator' || previousKey === 'calculate') {
-                display.textContent = buttonContent;
-            } else {
-                display.textContent = display.textContent + buttonContent;
-            }
-            previousKey = 'number';
-
-            if (display.innerText.length > 20) {
-                alert('Can you re-enter it within the maximum input range?');
-            }
-        }
-
-        if (action === 'zero'){
+        if (action === 'num' || action === 'zero'){
             if (display.textContent === '0' || previousKey === 'operator' || previousKey === 'calculate') {
                 display.textContent = buttonContent;
             } else {
