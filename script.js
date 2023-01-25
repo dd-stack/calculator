@@ -25,6 +25,7 @@ buttons.addEventListener('click', function(event){
     const buttonContainerArray = buttons.children;
 
     if (target.matches('button')){  //버튼이 선택되었을 때,
+
         for (let i = 0; i < buttonContainerArray.length; i++) {
             const childrenArray = buttonContainerArray[i].children;
             for (let j = 0; j < childrenArray.length; j++) {
@@ -39,6 +40,10 @@ buttons.addEventListener('click', function(event){
                 display.textContent = display.textContent + buttonContent;
             }
             previousKey = 'number';
+
+            if (display.innerText.length > 20) {
+                alert('Can you re-enter it within the maximum input range?');
+            }
         }
 
         if (action === 'zero'){
@@ -48,6 +53,10 @@ buttons.addEventListener('click', function(event){
                 display.textContent = display.textContent + buttonContent;
             }
             previousKey = 'number';
+
+            if (display.innerText.length > 20) {
+                alert('Can you re-enter it within the maximum input range?');
+            }
         }
 
         if (action === 'operator') {
@@ -73,8 +82,8 @@ buttons.addEventListener('click', function(event){
             firstNum = undefined;
             operatorForAdvanced = undefined;
             previousNum = undefined;
-            previousKey = 'clear';
             display.textContent = '0';
+            previousKey = 'clear';
         }
 
         if (action === 'confirm') {
