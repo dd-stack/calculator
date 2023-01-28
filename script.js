@@ -2,6 +2,7 @@ const calculator = document.querySelector('.calculator');
 const display = calculator.querySelector('.display');
 const buttons = calculator.querySelector('.box2');
 const operator = calculator.querySelector('.operator');
+const history = document.querySelector('.history');
 let firstNum, operatorForAdvanced, previousKey, previousNum;
 
 function calculate(n1, operator, n2){
@@ -22,58 +23,52 @@ buttons.addEventListener('click', function(event){
     const target = event.target;
     const action = target.classList[0];  //클릭된 HTML 엘리먼트의 클래스 정보 가져오기
     const buttonContent = target.textContent;  //클릭된 HTML 엘리먼트의 텍스트 정보 가져오기
-    const buttonContainerArray = buttons.children;
 
     if (target.matches('button')){  //버튼이 선택되었을 때,
 
-        for (let i = 0; i < buttonContainerArray.length; i++) {
-            const childrenArray = buttonContainerArray[i].children;
-            for (let j = 0; j < childrenArray.length; j++) {
-                childrenArray[j].classList.remove('isPressed');
-            }
-        }
-
-        if (action === 'num' || action === 'zero'){
-            if (display.textContent === '0' || previousKey === 'operator' || previousKey === 'calculate') {
-                display.textContent = buttonContent;
+        if (action === 'num' || action === 'zero'){  //숫자 버튼이라면,
+            if (display.textContent === '0' || previousKey === 'operator' || previousKey === 'confirm') {  
+            //디스플레이에 0이 찍혀있거나, 먼저 눌린 키가 연산 버튼이나 컨펌 버튼이라면,
+                display.textContent = buttonContent;  //누른 버튼의 숫자가 나옴.
             } else {
-                display.textContent = display.textContent + buttonContent;
+                display.textContent = display.textContent + buttonContent;  //아니라면 찍혀있는 숫자 뒤에 누른 버튼의 숫자가 추가됨.
             }
+            history.textContent = history.textContent + buttonContent
             previousKey = 'number';
-
-            if (display.innerText.length > 20) {
-                alert('Can you re-enter it within the maximum input range?');
-            }
         }
 
-        if (action === 'operator') {
-            target.classList.add('isPressed');
+        if (action === 'operator') {  //연산 버튼이라면,
             if (firstNum && operatorForAdvanced && previousKey !== 'operator' && previousKey !== 'calculate') {
                 display.textContent = calculate(firstNum, operatorForAdvanced, display.textContent);
             }
             firstNum = display.textContent;
             operatorForAdvanced = buttonContent;
+
+            history.textContent = history.textContent + buttonContent;
             previousKey = 'operator';
         }
 
-        if (action === 'decimal') {
+        if (action === 'decimal') {  //소수점 버튼이라면,
             if (!display.textContent.includes('.') && previousKey !== 'operator') {
                 display.textContent = display.textContent + '.';
             } else if (previousKey === 'operator') {
                 display.textContent = '0.';
             }
+            history.textContent = history.textContent + buttonContent;
             previousKey = 'decimal';
         }
 
-        if (action === 'clear') {
+        if (action === 'clear') {  //AC 버튼이라면,
             firstNum = undefined;
             operatorForAdvanced = undefined;
             previousNum = undefined;
             display.textContent = '0';
+
+            history.textContent = '';
             previousKey = 'clear';
         }
 
-        if (action === 'confirm') {
+        if (action === 'confirm') {  //컨펌(엔터) 버튼이라면,
             if (firstNum) {
                 if (previousKey === 'calculate') {
                     display.textContent = calculate(display.textContent, operatorForAdvanced, previousNum);
@@ -82,7 +77,8 @@ buttons.addEventListener('click', function(event){
                     display.textContent = calculate(firstNum, operatorForAdvanced, display.textContent);
                 }
             }
-            previousKey = 'calculate';
+            history.textContent = `${history.textContent} = ${display.textContent}`;
+            previousKey = 'confirm';
         }
     }
 });

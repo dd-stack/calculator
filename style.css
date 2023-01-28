@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
-    border-radius:20px;
+    border-radius: 20px;
     font-family: 'Fredoka One', cursive;
 }
-
+button {
+    cursor: pointer;
+}
 body {
     display: flex;
     justify-content: center;
@@ -17,8 +19,31 @@ body {
     background-size: contain;
 }
 
-button {
-    cursor:pointer;
+.history {
+    position: absolute;
+    top: 250px;
+    width: 260px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: medium;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+.history::-webkit-scrollbar {
+    height: 15px;
+    width: 15px;
+}
+.history::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.history::-webkit-scrollbar-track {
+    background-color: rgba(158, 128, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 5px white;
 }
 
 .calculator {
@@ -41,10 +66,25 @@ button {
     align-items: center;
     flex-direction: row-reverse;
 }
-
 .display {
     font-size: x-large;
     font-weight: 800;
+    overflow: auto;
+}
+.display::-webkit-scrollbar {
+    height: 15px;
+    width: 15px;
+}
+.display::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.display::-webkit-scrollbar-track {
+    background-color: rgba(158, 128, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 5px white;
 }
 
 .box2 {
@@ -57,7 +97,6 @@ button {
     align-items: center;
     flex-direction: column;
 }
-
 .miniBox {
     margin: 5px 0px;
     width: 280px;
@@ -67,44 +106,40 @@ button {
     align-items: center;
     background-color: rgba(158, 128, 255, 0.2); 
 }
-
 .confirm, .clear {
     margin: 0px 4px;
     width: 128px;
     height: 40px;
     background-color: #FFDC98;
+    border-color: #FFDC98;
     font-size: large;
     font-weight: 500;
-    border-color: #FFDC98;
 }
-
 .num, .decimal {
     margin: 0px 4px;
     width: 60px;
     height: 40px;
     background-color:#C8F8EE;
+    border-color: #C8F8EE;
     font-size: large;
     font-weight: 500;
-    border-color: #C8F8EE;
 }
-
 .zero {
     margin: 0px 4px;
     width: 128px;
     height: 40px;
     background-color:#C8F8EE;
+    border-color: #C8F8EE;
     font-size: large;
     font-weight: 500;
-    border-color: #C8F8EE;
 }
-
 .operator {
     margin: 0px 4px;
     width: 60px;
     height: 40px;
     background-color:rgba(158, 128, 255);
+    border-color: rgba(158, 128, 255);
     color: white;
     font-size: large;
     font-weight: 500;
-    border-color: rgba(158, 128, 255);
 }
